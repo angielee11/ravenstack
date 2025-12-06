@@ -11,7 +11,7 @@ GROUP BY ALL
 usage_activation AS (
 
 SELECT  DATE_TRUNC(a.signup_date, MONTH) AS signup_month,
-        DATE_DIFF(a.first_usage_date, a.signup_date, MONTH) AS month_number,
+        CEILING(DATE_DIFF(a.first_usage_date, a.signup_date, DAY)/30) AS month_number,
         COUNT(DISTINCT m.account_id) AS usage_activated
 
 FROM reporting_monthly m 
