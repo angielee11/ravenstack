@@ -11,7 +11,7 @@ GROUP BY ALL
 usage AS (
 
 SELECT  DATE_TRUNC(a.signup_date, MONTH) AS signup_month,
-        DATE_DIFF(m.reporting_month, a.signup_date, MONTH) AS month_number,
+        CEILING(DATE_DIFF(m.reporting_month, a.signup_date, DAY)/30) AS month_number,
         COUNT(DISTINCT CASE WHEN usage_flag IS FALSE THEN m.account_id END) AS usage_churn
 
 FROM reporting_monthly m 
