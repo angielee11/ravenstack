@@ -1,0 +1,4 @@
+- lake: raw files from Kaggle
+- dwh: cleansed bronze/silver layer of the lake
+- reporting: aggregrated metrics
+- dashboard: [Looker Studio link](https://lookerstudio.google.com/reporting/4bc7e1fd-c988-43cd-a945-84ab3bad1923/)
